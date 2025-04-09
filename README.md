@@ -6,7 +6,7 @@ This repository has the demo code for building a real time analytics dashboard b
 
 ![demo-outline.png](images/demo-outline.png)
 
-The demo setup is based on docker compose with Kafka, Flink, Kafka Connect with Datagen connector, Schema Registry, Trino, Rest catalog, Superset, Minio. We will ingest sample page click event messages to Kafka using the Datagen Connector. We will stream this data in Flink along with some sample user details and page details data JSON files from file system using Flink SQL and store in Iceberg. Further we will write some Flink SQL code to perform joins and store the results as well in Iceberg. We will then configure Trino to read these data and visualise them using Apache Superset.  The idea is to show how data flows from Kafka to Iceberg using Flink and how you can connect other query engines like Trino to read this data and visualise using Superset.
+The demo setup is based on docker compose with Kafka, Flink, Kafka Connect with Datagen connector, Schema Registry, Trino, Rest catalog, Superset, Minio. We will ingest sample page click event messages to Kafka using the Datagen Connector. We will stream this data in Flink along with some sample user details and page details data JSON files from file system using Flink SQL and store in Iceberg. Further we will write some Flink SQL code to perform joins and store the results as well in Iceberg. We will then configure Trino to read these data and visualise them using Apache Superset.  The idea is to show how data flows from Kafka to Iceberg using Flink and how you can connect other query engines like Trino to read this data and visualize using Superset.
 
 Sample Page Click Event message
 
