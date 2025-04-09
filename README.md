@@ -81,7 +81,7 @@ curl --location --request PUT 'http://localhost:8083/connectors/datagen_local_01
             "kafka.topic": "pageviews",
             "quickstart": "pageviews",
             "max.interval": 500,
-            "iterations": 10000,
+            "iterations": 15000,
             "tasks.max": "1"
 }'
 
@@ -198,10 +198,14 @@ select * from pages;
 ```
 use catalog ice_catalog;
 
+```
+
+```
+
 CREATE DATABASE ice_db
   WITH (
     'db'='ice_db'
-  );
+ );
 
 
   
@@ -296,6 +300,9 @@ different branches and tags (only main branch will be there as we didn't create 
 ```
 use catalog ice_catalog;
 
+```
+
+```
 use ice_db;
 
 ```
@@ -334,7 +341,7 @@ select * from ice_page_views /*+ OPTIONS('as-of-timestamp'='1725202636000') */;
 
 29) You can also download and inspect the metadata files like the manifest files (json), manifest-list (Avro) and manifest files(avro) to 
 see how the table metadata like schema, columns, the different snapshot details and stats are tracked in these metadata files. 
-For avrò files you can use avro-tools to check the content of the files
+For avro files you can use avro-tools to check the content of the files
 
 30) Now let's setup a Trino connection in Apache Superset and create a couple of dashboards to perform some analytics like to find the top 
 regions where our users are located and also the popular pages being visted from the ice_user_page_views iceberg table
