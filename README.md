@@ -124,6 +124,7 @@ CREATE TABLE page_views (
 ```
 13) Create users table in Flink from JSON message in file system. This will use filesystem Flink connector with appropriate properties
 
+```
 CREATE TABLE
 users (
 userid STRING,
@@ -138,7 +139,11 @@ region STRING
         'source.monitor-interval' = '100'
 );
   
+
+```
 14) Create pages table in Flink from JSON message in file system. This will use filesystem Flink connector with appropriate properties
+
+```
 
 CREATE TABLE
 pages (
@@ -154,7 +159,7 @@ pagedescription STRING
         'source.monitor-interval' = '100'
 );
 
-
+```
 15) So far we have created 3 tables corresponding to 1 Kafka topic and 2 file system sources. All these are created in Flink's default catalog and default database. You can verify the tables created and the current catalog and 
 current database as shown in the screenshot below
 
@@ -273,7 +278,8 @@ pagedescription string
 
 ```
 
-insert into ice_catalog.ice_db.ice_user_page_views select u.userid, pv.pageid, u.region, p.pagedescription from users u join page_views pv on(u.userid = pv.userid) join pages p on(pv.pageid = p.pageid);
+insert into ice_catalog.ice_db.ice_user_page_views select u.userid, pv.pageid, u.region, p.pagedescription 
+from users u join page_views pv on(u.userid = pv.userid) join pages p on(pv.pageid = p.pageid);
 
 
 ```
